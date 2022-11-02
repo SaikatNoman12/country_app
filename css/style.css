@@ -14,6 +14,7 @@ body {
 main {
     width: 100%;
     min-height: 100vh;
+    padding: 0px 20px;
 }
 
 .container {
@@ -25,11 +26,21 @@ main {
 }
 
 .main-child {
-    width: 750px;
+    width: 600px;
     padding: 20px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 7px 33px #00000059;
     border-radius: 10px;
+}
+
+@media (max-width:767px) {
+    .container {
+        width: 94%;
+    }
+
+    .main-child {
+        width: 100%;
+    }
 }
 
 .search {
@@ -92,6 +103,15 @@ main {
     height: 100%;
 }
 
+@media (max-width:767px) {
+
+    .flag {
+        width: 100%;
+    }
+
+
+}
+
 .country-name h1 {
     font-size: 32px;
     font-weight: 600;
@@ -108,16 +128,85 @@ main {
     width: 100%;
     display: flex;
     justify-content: start;
+    margin-bottom: 16px;
+}
+
+.column:last-child {
+    margin-bottom: 0px;
 }
 
 .column h2 {
-    font-size: 24px;
+    font-size: 20px;
     color: black;
     font-weight: 600;
 }
 
 .column span {
-    font-size: 24px;
+    font-size: 20px;
     color: #333;
     font-weight: 500;
+}
+
+@media (max-width:582px) {
+    .search form {
+        grid-template-columns: 1fr;
+    }
+
+    .search form button {
+        padding: 6px 20px;
+    }
+
+    .search form input {
+        font-size: 16px;
+    }
+
+    .search form input::placeholder {
+        font-size: 14px;
+    }
+
+    .country-name h1 {
+        font-size: 24px;
+    }
+
+    .flag {
+        height: 130px;
+    }
+
+    .flag-country-name {
+        margin-bottom: 24px;
+    }
+
+    .column {
+        margin-bottom: 10px;
+    }
+
+    .column h2 {
+        font-size: 18px;
+    }
+
+    .column span {
+        font-size: 18px;
+    }
+
+}
+
+@media (max-width:392px) {
+
+    .search form input::placeholder {
+        font-size: 10px;
+    }
+
+}
+
+@media (max-width:370px) {
+
+
+    .column h2 {
+        font-size: 16px;
+    }
+
+    .column span {
+        font-size: 16px;
+    }
+
 }
