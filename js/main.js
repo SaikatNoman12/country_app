@@ -10,7 +10,10 @@ form.addEventListener('submit', (e) => {
     const inputValue = inputData.value.toLowerCase();
 
     if (inputValue === '' || inputValue.trim() === '') {
-        console.log('please fill your input!');
+
+        const err = 'Your input is empty!';
+        showError(err);
+
     }
     else {
 
@@ -21,10 +24,12 @@ form.addEventListener('submit', (e) => {
             .then(data => showData(data[0]))
             .catch(() => {
 
-            })
+                const err = 'Please enter valid country name!';
+                showError(err);
 
-
+            });
     }
+
 
 });
 
@@ -33,16 +38,15 @@ function showData(data) {
 
     details.innerHTML =
         `<div class="flag-country-name">
-        <div class="flag">
-            <img src="${data.flags.svg}" alt="${data.name.common.toLowerCase()}">
-        </div>
-        <div class="country-name">
-            <h1>${data.name.common}</h1>
-        </div>
+            <div class="flag">
+                <img src="${data.flags.svg}" alt="${data.name.common.toLowerCase()}">
+            </div>
+            <div class="country-name">
+                <h1>${data.name.common}</h1>
+            </div>
         </div>
 
         <div class="info">
-
             <div class="column">
                 <h2>Capital:</h2>
                 <span>${data.continents[0]}</span>
@@ -68,7 +72,15 @@ function showData(data) {
                 <h2>Self-reliant::</h2>
                 <span>${data.independent ? 'Independent' : 'Unindependent'}</span>
             </div>
-
         </div>`;
 
+    inputData.value = '';
+
+}
+
+function showError(errMassage) {
+    details.innerHTML =
+        `<div class="error-show">
+        <h3>${errMassage}</h3>
+    </div>`;
 }

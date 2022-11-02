@@ -45,7 +45,6 @@ main {
 
 .search {
     width: 100%;
-    margin-bottom: 28px;
 }
 
 .search form {
@@ -79,6 +78,16 @@ main {
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 1px;
+    cursor: grab;
+}
+
+.search form button:hover {
+    opacity: 0.8;
+}
+
+.search form button:active {
+    cursor: grabbing;
+    opacity: 0.5;
 }
 
 .details {
@@ -89,6 +98,7 @@ main {
     width: 100%;
     text-align: center;
     margin-bottom: 40px;
+    margin-top: 28px;
 }
 
 .flag {
@@ -104,12 +114,9 @@ main {
 }
 
 @media (max-width:767px) {
-
     .flag {
         width: 100%;
     }
-
-
 }
 
 .country-name h1 {
@@ -145,6 +152,16 @@ main {
     font-size: 20px;
     color: #333;
     font-weight: 500;
+}
+
+.error-show {
+    text-align: center;
+    margin-top: 28px;
+}
+
+.error-show h3 {
+    font-size: 22px;
+    color: #ed143dad;
 }
 
 @media (max-width:582px) {
@@ -188,19 +205,18 @@ main {
         font-size: 18px;
     }
 
+    .error-show h3 {
+        font-size: 18px;
+    }
 }
 
 @media (max-width:392px) {
-
     .search form input::placeholder {
         font-size: 10px;
     }
-
 }
 
 @media (max-width:370px) {
-
-
     .column h2 {
         font-size: 16px;
     }
@@ -208,5 +224,4 @@ main {
     .column span {
         font-size: 16px;
     }
-
 }
