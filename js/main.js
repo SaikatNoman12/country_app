@@ -17,8 +17,10 @@ form.addEventListener('submit', (e) => {
     }
     else {
 
+        // api search url;
         const countryName = `https://restcountries.com/v3.1/name/${inputValue}?fullText=true`;
 
+        // fetch data
         fetch(countryName)
             .then(res => res.json())
             .then(data => showData(data[0]))
@@ -28,8 +30,8 @@ form.addEventListener('submit', (e) => {
                 showError(err);
 
             });
-    }
 
+    }
 
 });
 
@@ -79,8 +81,10 @@ function showData(data) {
 }
 
 function showError(errMassage) {
+
     details.innerHTML =
         `<div class="error-show">
         <h3>${errMassage}</h3>
     </div>`;
+
 }
